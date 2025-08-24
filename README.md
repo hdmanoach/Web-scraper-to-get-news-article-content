@@ -17,13 +17,15 @@ git clone https://github.com/hdmanoach/Web-scraper-to-get-news-article-content.g
 cd Web-scraper-to-get-news-article-content
 ```
 2.Créer et activer un environnement virtuel
+```bash
 python3 -m venv venv
 source venv/bin/activate        # Sur Windows : venv\Scripts\activate
-
+```
 3. Installer les dépendances
+   ```bash
    pip install django newspaper3k requests beautifulsoup4
    pip install -r requirements.txt
-
+``
 5. Lancer le serveur Django
 python manage.py runserver
 
