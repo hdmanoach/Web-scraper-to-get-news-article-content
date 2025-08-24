@@ -30,6 +30,6 @@ python manage.py runserver
 Accède à l'application dans ton navigateur :
 http://127.0.0.1:8000/
 
-#Auteur
+# Auteur
 
 [Manoach HOSSOU DODO] (https://github.com/hdmanoach)
