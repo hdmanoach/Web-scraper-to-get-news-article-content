@@ -21,9 +21,10 @@ python3 -m venv venv
 source venv/bin/activate        # Sur Windows : venv\Scripts\activate
 
 3. Installer les dépendances
-pip install -r requirements.txt
+   pip install django newspaper3k requests beautifulsoup4
+   pip install -r requirements.txt
 
-4. Lancer le serveur Django
+5. Lancer le serveur Django
 python manage.py runserver
 
 
