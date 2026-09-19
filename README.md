@@ -4,6 +4,10 @@ Clairvoyant est une application web Flask qui extrait rapidement le contenu text
 
 L’interface adopte un style éditorial minimaliste afin de lire le résultat sans distractions.
 
+## Aperçu
+
+![Interface de Clairvoyant](docs/clair.png)
+
 ## Fonctionnalités
 
 - Saisie et validation d’une URL HTTP ou HTTPS
@@ -83,6 +87,8 @@ python app.py
 ├── requirements.txt        # Dépendances Python
 ├── templates/
 │   └── champs.html          # Interface utilisateur
+├── docs/
+│   └── clair.png            # Capture d’écran de l’application
 └── README.md
 ```
 
