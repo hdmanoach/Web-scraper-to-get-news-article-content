@@ -1,38 +1,99 @@
-# Web-scraper-to-get-news-article-content
-Ce projet est un **web scraper** développé en Python permettant d’extraire automatiquement le **contenu d’articles d’actualité** à partir de sources en ligne. Il utilise des bibliothèques comme `requests`, `BeautifulSoup` ou `Newspaper3k` pour récupérer les titres, dates, auteurs et corps des articles.
-## ⚙️ Fonctionnalité
-- L'utilisateur saisit l'**URL d’un article** dans une barre de recherche.
-- En cliquant sur le bouton, le scraper tente de récupérer le contenu de la page.
-- Si **aucune restriction** n'est détectée sur le site web, l'article est affiché.
-- En cas de restriction (ex : protection contre les bots), un **message d’erreur** est affiché à l'utilisateur.
+# Clairvoyant
 
-- ## 🚀 Installation
+Clairvoyant est une application web Flask qui extrait rapidement le contenu textuel d’une page d’actualité à partir de son URL.
 
-> Ce projet est une application Django. Voici les étapes pour l’installer et le lancer en local :
+L’interface adopte un style éditorial minimaliste afin de lire le résultat sans distractions.
 
-### 1. Cloner le dépôt
+## Fonctionnalités
+
+- Saisie et validation d’une URL HTTP ou HTTPS
+- Récupération du contenu avec `requests`
+- Extraction du titre, de la description, de l’auteur, de la date et de l’image principale
+- Nettoyage du contenu pour retirer les menus, scripts, formulaires et éléments inutiles
+- Respect de `robots.txt` lorsque le site le fournit
+- Détection des refus d’accès (`401`, `403`), des limitations (`429`) et des CAPTCHA
+- Limitation des requêtes rapprochées pour éviter de surcharger les sites
+- Affichage des erreurs réseau ou des URLs invalides
+- Interface responsive pour ordinateur et mobile
+
+## Technologies
+
+- Python 3
+- Flask
+- Requests
+- BeautifulSoup 4
+- HTML et CSS natifs
+
+## Installation
+
+### 1. Cloner le projet
 
 ```bash
 git clone https://github.com/hdmanoach/Web-scraper-to-get-news-article-content.git
 cd Web-scraper-to-get-news-article-content
 ```
-2.Créer et activer un environnement virtuel
+
+### 2. Créer l’environnement virtuel
+
+Linux/macOS :
+
 ```bash
 python3 -m venv venv
-source venv/bin/activate        # Sur Windows : venv\Scripts\activate
+source venv/bin/activate
 ```
-3. Installer les dépendances
-   ```bash
-   pip install django newspaper3k requests beautifulsoup4
-   pip install -r requirements.txt
-``
-5. Lancer le serveur Django
-python manage.py runserver
 
+Windows :
 
-Accède à l'application dans ton navigateur :
-http://127.0.0.1:8000/
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
 
-# Auteur
+### 3. Installer les dépendances
 
-[Manoach HOSSOU DODO] (https://github.com/hdmanoach)
+```bash
+pip install -r requirements.txt
+```
+
+## Lancer l’application
+
+Depuis la racine du projet :
+
+```bash
+flask --app app run --debug
+```
+
+L’application est ensuite disponible à l’adresse :
+
+```text
+http://127.0.0.1:5000/
+```
+
+Une autre méthode de lancement est possible :
+
+```bash
+python app.py
+```
+
+## Structure du projet
+
+```text
+.
+├── app.py                  # Application Flask et logique de scraping
+├── requirements.txt        # Dépendances Python
+├── templates/
+│   └── champs.html          # Interface utilisateur
+└── README.md
+```
+
+## Limites
+
+Le scraper dépend de la structure et des règles de chaque site. Certains sites peuvent bloquer les requêtes automatisées, nécessiter JavaScript ou ne pas exposer leur contenu directement. Dans ce cas, un message d’erreur est affiché.
+
+Clairvoyant ne contourne pas les CAPTCHA, les authentifications ou les protections anti-scraping. Pour les sites qui refusent l’accès, utilisez leur API officielle, leur flux RSS ou demandez une autorisation.
+
+Utilisez cet outil uniquement sur des pages accessibles légalement et respectez les conditions d’utilisation des sites consultés.
+
+## Auteur
+
+[Manoach HOSSOU DODO](https://github.com/hdmanoach)
